@@ -7,7 +7,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.reven.springmvc.core.BaseController;
 import com.reven.springmvc.service.IHelloService;
 
 @Controller

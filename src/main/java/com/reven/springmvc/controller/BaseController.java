@@ -1,4 +1,4 @@
-package com.reven.springmvc.core;
+package com.reven.springmvc.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
