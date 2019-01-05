@@ -14,7 +14,19 @@
     	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
   		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 	
-	<mvc:annotation-driven />
+	<mvc:annotation-driven>
+		<!-- 避免IE,返回JSON出现下载文件 -->
+		<mvc:message-converters>
+			<bean
+				class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+				<property name="supportedMediaTypes">
+					<list>
+						<value>text/html;charset=UTF-8</value>
+					</list>
+				</property>
+			</bean>
+		</mvc:message-converters>
+    </mvc:annotation-driven>
 	<!-- 启用注解识别功能 -->
 	<context:annotation-config />
 
@@ -171,5 +183,6 @@
     </bean>  
     <!-- String类型解析器，允许直接返回String类型的消息 -->  
     <bean id="stringHttpMessageConverter" class="org.springframework.http.converter.StringHttpMessageConverter"/>  
+	
 	
 </beans>
